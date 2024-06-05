@@ -23,8 +23,8 @@ img_tensor.unsqueeze_(dim=0)    # C*H*W to B*C*H*W
 # ================================= create convolution layer ==================================
 
 # ================ 2d
-# flag = 1
-flag = 0
+flag = 1
+# flag = 0
 if flag:
     conv_layer = nn.Conv2d(3, 1, 3)   # input:(i, o, size) weights:(o, i , h, w)
     # 初始化卷积层权值
@@ -49,7 +49,7 @@ if flag:
 print("卷积前尺寸:{}\n卷积后尺寸:{}".format(img_tensor.shape, img_conv.shape))
 img_conv = transform_invert(img_conv[0, 0:1, ...], img_transform)
 img_raw = transform_invert(img_tensor.squeeze(), img_transform)
-plt.subplot(122).imshow(img_conv, cmap='gray')
+plt.subplot(122).imshow(img_conv, cmap='Purples_r')
 plt.subplot(121).imshow(img_raw)
 plt.show()
 

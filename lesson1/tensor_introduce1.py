@@ -7,19 +7,19 @@ torch.manual_seed(1)
 # ===============================  exmaple 1 ===============================
 # 通过torch.tensor创建张量
 #
-# flag = True
-flag = False
+flag = True
+# flag = False
 if flag:
     arr = np.ones((3, 3))
     print("ndarray的数据类型：", arr.dtype)
     # 创建存放在 GPU 的数据
     # t = torch.tensor(arr, device='cuda')
-    t= torch.tensor(arr)
+    t = torch.tensor(arr)
     print(t)
 # ===============================  exmaple 2 ===============================
 # 通过torch.from_numpy创建张量
-# flag = True
-flag = False
+flag = True
+# flag = False
 if flag:
     arr = np.array([[1, 2, 3], [4, 5, 6]])
     t = torch.from_numpy(arr)
@@ -38,8 +38,8 @@ if flag:
 
 # ===============================  exmaple 3 ===============================
 # 通过torch.zeros创建张量
-# flag = True
-flag = False
+flag = True
+# flag = False
 if flag:
     out_t = torch.tensor([1])
     # 这里制定了 out
@@ -50,8 +50,8 @@ if flag:
 
 # ===============================  exmaple 4 ===============================
 # 通过torch.full创建全1张量
-# flag = True
-flag = False
+flag = True
+# flag = False
 if flag:
     t = torch.full((3, 3), 1)
     print(t)
@@ -59,16 +59,16 @@ if flag:
 
 # ===============================  exmaple 5 ===============================
 # 通过torch.arange创建等差数列张量
-# flag = True
-flag = False
+flag = True
+# flag = False
 if flag:
     t = torch.arange(2, 10, 2)
     print(t)
 
 # ===============================  exmaple 6 ===============================
 # 通过torch.linspace创建均分数列张量
-# flag = True
-flag = False
+flag = True
+# flag = False
 if flag:
     # t = torch.linspace(2, 10, 5)
     t = torch.linspace(2, 10, 6)

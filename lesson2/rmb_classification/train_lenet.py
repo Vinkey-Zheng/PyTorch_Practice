@@ -12,7 +12,7 @@ from matplotlib import pyplot as plt
 from model.lenet import LeNet, LeNetSequetial
 from tools.my_dataset import RMBDataset
 from enviroments import rmb_split_dir
-from tensorboardX import  SummaryWriter
+from tensorboardX import SummaryWriter
 
 def set_seed(seed=1):
     random.seed(seed)

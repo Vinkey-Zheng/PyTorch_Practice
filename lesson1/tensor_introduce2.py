@@ -6,8 +6,8 @@ torch.manual_seed(1)
 # ======================================= example 1 =======================================
 # torch.cat
 
-# flag = True
-flag = False
+flag = True
+# flag = False
 
 if flag:
     t = torch.ones((2, 3))
@@ -19,24 +19,24 @@ if flag:
 # ======================================= example 2 =======================================
 # torch.stack
 
-# flag = True
-flag = False
+flag = True
+# flag = False
 
 if flag:
     t = torch.ones((2, 3))
     # dim =2
     t_stack = torch.stack([t, t, t], dim=2)
-    print("\nt_stack.shape:{}".format(t_stack.shape))
+    print("\nt_stack:{} \nt_stack.shape:{}".format(t_stack, t_stack.shape))
     # dim =0
     t_stack = torch.stack([t, t, t], dim=0)
-    print("\nt_stack.shape:{}".format(t_stack.shape))
+    print("\nt_stack:{} \nt_stack.shape:{}".format(t_stack, t_stack.shape))
 
 
 # ======================================= example 3 =======================================
 # torch.chunk
 
-# flag = True
-flag = False
+flag = True
+# flag = False
 
 if flag:
     a = torch.ones((2, 7))  # 7
@@ -48,8 +48,8 @@ if flag:
 # ======================================= example 4 =======================================
 # torch.split
 
-# flag = True
-flag = False
+flag = True
+# flag = False
 
 if flag:
     t = torch.ones((2, 5))
@@ -65,8 +65,8 @@ if flag:
 # ======================================= example 5 =======================================
 # torch.index_select
 
-# flag = True
-flag = False
+flag = True
+# flag = False
 
 if flag:
     # 创建均匀分布
@@ -80,8 +80,8 @@ if flag:
 # ======================================= example 6 =======================================
 # torch.masked_select
 
-# flag = True
-flag = False
+flag = True
+# flag = False
 
 if flag:
 
@@ -95,8 +95,8 @@ if flag:
 # ======================================= example 7 =======================================
 # torch.reshape
 
-# flag = True
-flag = False
+flag = True
+# flag = False
 
 if flag:
     # 生成 0 到 8 的随机排列
@@ -109,14 +109,14 @@ if flag:
     t[0] = 1024
     print("t:{}\nt_reshape:\n{}".format(t, t_reshape))
     print("t.data 内存地址:{}".format(id(t.data)))
-    print("t_reshape.data 内存地址:{}".format(id(t_reshape.data)))
+    print("t_reshape.data 内存地址:{}".format(id(t_reshape.data))) # 地址一样
 
 
 # ======================================= example 8 =======================================
 # torch.transpose
 
-# flag = True
-flag = False
+flag = True
+# flag = False
 
 if flag:
     # torch.transpose
@@ -129,8 +129,8 @@ if flag:
 # ======================================= example 9 =======================================
 # torch.squeeze
 
-# flag = True
-flag = False
+flag = True
+# flag = False
 
 if flag:
     # 维度 0 和 3 的长度是 1
@@ -156,7 +156,7 @@ flag = True
 if flag:
     t_0 = torch.randn((3, 3))
     t_1 = torch.ones_like(t_0)
-    t_add = torch.add(t_0, 10, t_1)
+    t_add = torch.add(t_0, t_1)
     print("t_0:\n{}\nt_1:\n{}\nt_add_10:\n{}".format(t_0, t_1, t_add))
 
 

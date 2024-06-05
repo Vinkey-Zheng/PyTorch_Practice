@@ -32,23 +32,23 @@ class MLP(nn.Module):
         for m in self.modules():
             # 判断这一层是否为线性层，如果为线性层则初始化权值
             if isinstance(m, nn.Linear):
-                # nn.init.normal_(m.weight.data, std=np.sqrt(1/self.neural_num))    # normal: mean=0, std=1
-                # nn.init.normal_(m.weight.data)    # normal: mean=0, std=1
+                nn.init.normal_(m.weight.data, std=np.sqrt(1/self.neural_num))    # normal: mean=0, std=1
+                nn.init.normal_(m.weight.data)    # normal: mean=0, std=1
 
-                # a = np.sqrt(6 / (self.neural_num + self.neural_num))
-                # # 把 a 变换到 tanh，计算增益
-                # tanh_gain = nn.init.calculate_gain('tanh')
-                # a *= tanh_gain
-                #
-                # nn.init.uniform_(m.weight.data, -a, a)
+                a = np.sqrt(6 / (self.neural_num + self.neural_num))
+                # 把 a 变换到 tanh，计算增益
+                tanh_gain = nn.init.calculate_gain('tanh')
+                a *= tanh_gain
 
-                # nn.init.xavier_uniform_(m.weight.data, gain=tanh_gain)
+                nn.init.uniform_(m.weight.data, -a, a)
 
-                # nn.init.normal_(m.weight.data, std=np.sqrt(2 / self.neural_num))
+                nn.init.xavier_uniform_(m.weight.data, gain=tanh_gain)
+
+                nn.init.normal_(m.weight.data, std=np.sqrt(2 / self.neural_num))
                 nn.init.kaiming_normal_(m.weight.data)
 
-flag = 0
-# flag = 1
+# flag = 0
+flag = 1
 
 if flag:
     layer_nums = 100

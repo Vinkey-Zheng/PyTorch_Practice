@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-
+# 求导
 import torch
 torch.manual_seed(10)
 
 
 # ====================================== retain_graph ==============================================
-# flag = True
-flag = False
+flag = True
+# flag = False
 if flag:
     w = torch.tensor([1.], requires_grad=True)
     x = torch.tensor([2.], requires_grad=True)
@@ -22,8 +22,8 @@ if flag:
     y.backward()
 
 # ====================================== grad_tensors ==============================================
-# flag = True
-flag = False
+flag = True
+# flag = False
 if flag:
     w = torch.tensor([1.], requires_grad=True)
     x = torch.tensor([2.], requires_grad=True)
@@ -45,8 +45,8 @@ if flag:
 
 
 # ====================================== autograd.gard ==============================================
-# flag = True
-flag = False
+flag = True
+# flag = False
 if flag:
 
     x = torch.tensor([3.], requires_grad=True)
@@ -60,8 +60,8 @@ if flag:
 
 
 # ====================================== tips: 1 ==============================================
-# flag = True
-flag = False
+flag = True
+# flag = False
 if flag:
 
     w = torch.tensor([1.], requires_grad=True)
@@ -78,8 +78,8 @@ if flag:
 
 
 # ====================================== tips: 2 ==============================================
-# flag = True
-flag = False
+flag = True
+# flag = False
 if flag:
 
     w = torch.tensor([1.], requires_grad=True)
@@ -113,8 +113,8 @@ if flag:
     print(id(a), a)
 
 
-# flag = True
-flag = False
+flag = True
+# flag = False
 if flag:
 
     w = torch.tensor([1.], requires_grad=True)
